@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event</title>
+    </head>
+    <body>
+        <h1>AkiraChix Event Calendar</h1>
+        <ul>
+            {% for e in all_events%}
+               <li>{{ e.name}} </li>  
+            {% endfor %}
+        </ul>
+    </body>
+</html>

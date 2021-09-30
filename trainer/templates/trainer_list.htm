@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>Trainer Registration List</h1>
+    <table class="body">
+        <tr>
+            <th>Picture</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>profile</th>
+            <th>Edit</th>
+        </tr>
+        {%for trainer in trainers %}
+        <tr>
+            {% if trainer.picture %}
+            <td><img src="{{trainer.picture.url}}"></td>
+            {%endif%}
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td>{{trainer.gender}}</td>
+            <td>{{trainer.nationality}}</td>
+            <td>{{trainer.email}}</td>
+            <td>{{trainer.course}}</td>
+
+            <td><a href="{% url'trainer_profile'id=trainer.id %}">profile</a>
+            </td>
+            <td><a href="{% url'edit_trainer'id=trainer.id % }">Edit</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+
+    <style>
+        h1{
+            text-align: center;
+            color: purple;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid purple;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: purple;
+            
+        }
+    </style>
+</body>
+
+</html>

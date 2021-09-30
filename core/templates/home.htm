@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<html>
+
+<body>
+
+    <style>
+        body {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-DKo05tr2JAer8d80P2oHHRw187axMv39JQ&usqp=CAU");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 40px;
+
+        }
+
+        .home {
+            /* overflow: hidden; */
+            background-color: rgb(180, 107, 130);
+            position: fixed;
+            height: 10%;
+            top: 0;
+            width: 100%;
+            color: green;
+
+        }
+
+        .home a {
+            margin-right: 2%;
+            color: black;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-size: 70px;
+        }
+
+        .nav-bar:hover {
+            cursor: pointer;
+            color: rgb(1, 24, 24);
+        }
+
+        h3 {
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        nav {
+            float: right;
+            text-align: right;
+        }
+
+        nav a {
+            padding: 20px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+        
+    </style>
+    <div class="nav">
+        <nav>
+            <a href="#"><span>Home</span></a>
+            <a class="nav-bar" href="{% url 'register_student' %}"> Student</a>
+            <a class="nav-bar" href="{% url 'register_trainer' %}"> Trainer </a>
+            <a class="nav-bar" href="{% url 'register_courses' %}"> Course</a>
+        </nav>
+    </div>
+
+
+    <h3>Welcome to AkiraChix School system</h3>
+
+   <p>{{students}} Student</p>
+</body>
+</html>

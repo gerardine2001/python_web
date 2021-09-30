@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>Edit Student</h1>
+    <table>
+        <tr>
+            <th>Picture</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Date_of_birth</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Student_id</th>
+            <th>Nationality</th>
+            <th>National_id</th>
+            <th>profile</th>
+            <th>Edit</th>
+        </tr>
+        {%for student in students %}
+        <tr>
+            {% if student.picture %}
+            <td><img src="{{student.picture.url}}"></td>
+            {%endif%}
+            <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.date_of_birth}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.student_id}}</td>
+            <td>{{student.nationality}}</td>
+            <td>{{student.national_id}}</td>
+            <td><a href="{ % url'student_profile' id=student.id % }">profile</a>
+            </td>
+            <td><a href="{ % url'edit_student' id=student.id % }">Edit</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+
+
+
+    <style>
+        h1 {
+            text-align: center;
+            color: purple;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid purple;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: purple;
+        }
+    </style>
+
+</body>
+
+</html>

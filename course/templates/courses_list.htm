@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <table>
+        <h1>Course List</h1>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Code</th>
+            <th>Trainer</th>
+            <th>Syllabus</th>
+            <th>Discription</th>
+
+        </tr>
+        {%for course in courses%}
+        <tbody>
+            <tr>
+                <td>{{course.course_name}}</td>
+                <td>{{course.course_code}}</td>
+                <td>{{course.trainer}}</td>
+                <td>{{course.syllabus}}</td>
+                <td>{{course.description}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+
+    <style>
+        h1{
+            text-align: center;
+            color: purple;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid purple;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: purple;
+        }
+    </style>
+</body>
+
+</html>
